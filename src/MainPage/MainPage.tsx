@@ -6,11 +6,12 @@ interface MainPageProps {
 }
 
 const MainPage = ({ warriors }: MainPageProps) => {
-    console.log(warriors)
+
     return (
         <ui.MainPageWrapper>
+                <div>These are our glorious warriors</div>
             {warriors !== [] ? warriors.map(warrior => {
-                return <Warrior description={warrior.description} name={warrior.name} skill={warrior.skill} number={warrior.number} key={warrior.number} />
+                return <Warrior description={warrior.description} name={warrior.name} skill={warrior.skill} number={warrior.number} key={warrior.number} url={warrior.url} />
             }): <div>no warriors yet</div>}
         </ui.MainPageWrapper>
     )
